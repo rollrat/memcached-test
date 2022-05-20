@@ -38,7 +38,7 @@ strace -f memcached 2>&1 | egrep -i "sockek|accept|connect|recv|send|read|write|
 
 ## netperf
 
-```
+```sh
 strace -f netserver -D 2>&1 | egrep -i "sockek|accept|connect|recv|send|read|write|poll|select|sockopt"
 strace -f netperf -H 127.0.0.1 -t TCP_RR -l 1 2>&1 | egrep -i "sockek|accept|connect|recv|send|read|write|poll|select|sockopt"
 ```
