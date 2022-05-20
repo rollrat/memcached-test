@@ -32,13 +32,13 @@ sudo make install
 ## test
 
 ```sh
-strace -f memcached 2>&1 | egrep -i "sockek|accept|connect|recv|send|read|write|poll|select|sockopt"
-./clients/memaslap -s 127.0.0.1:11211 -t 20s
+strace -f memcached 2>&1 | egrep -i "socket|accept|connect|recv|send|read|write|poll|select|sockopt"
+strace -f ./clients/memaslap -s 127.0.0.1:11211 -t 20s 2>&1 | egrep -i "socket|accept|connect|recv|send|read|write|poll|select|sockopt"
 ```
 
 ## netperf
 
 ```sh
-strace -f netserver -D 2>&1 | egrep -i "sockek|accept|connect|recv|send|read|write|poll|select|sockopt"
-strace -f netperf -H 127.0.0.1 -t TCP_RR -l 1 2>&1 | egrep -i "sockek|accept|connect|recv|send|read|write|poll|select|sockopt"
+strace -f netserver -D 2>&1 | egrep -i "socket|accept|connect|recv|send|read|write|poll|select|sockopt"
+strace -f netperf -H 127.0.0.1 -t TCP_RR -l 1 2>&1 | egrep -i "socket|accept|connect|recv|send|read|write|poll|select|sockopt"
 ```
