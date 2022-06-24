@@ -50,3 +50,7 @@ strace -f ./clients/memaslap -s 127.0.0.1:11211 -t 20s 2>&1 | egrep -i "socket|a
 strace -f netserver -D 2>&1 | egrep -i "socket|accept|connect|recv|send|read|write|poll|select|sockopt"
 strace -f netperf -H 127.0.0.1 -t TCP_RR -l 1 2>&1 | egrep -i "socket|accept|connect|recv|send|read|write|poll|select|sockopt"
 ```
+
+```sh
+gcc -o assmbly_test assmbly_test.c -Iinclude -march=native
+```
