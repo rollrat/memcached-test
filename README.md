@@ -29,6 +29,14 @@ sudo make
 sudo make install
 ```
 
+```sh
+cd /usr/bin
+mv g++ g++-9
+mv g++-new g++
+mv gcc gcc-9
+mv gcc-new gcc
+```
+
 ## test
 
 ```sh
